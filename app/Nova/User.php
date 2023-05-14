@@ -35,6 +35,8 @@ class User extends Resource
         'id', 'name', 'email',
     ];
 
+    public static $displayInNavigation = false;
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -44,7 +46,9 @@ class User extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()
+                ->hide()
+                ->sortable(),
 
             Gravatar::make()->maxWidth(50),
 
