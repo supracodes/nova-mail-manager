@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Customer;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -48,5 +49,7 @@ class DatabaseSeeder extends Seeder
                 'username' => $smtp['username']
             ], $smtp);
         }
+
+        Customer::factory(100)->create();
     }
 }
