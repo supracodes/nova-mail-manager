@@ -1,0 +1,1 @@
+<?phpnamespace Database\Factories\Campaign;use App\Models\Campaign\Sender;use Illuminate\Database\Eloquent\Factories\Factory;class SenderFactory extends Factory{    protected $model = Sender::class;    public function definition(): array    {        return [            'name' => fake()->name        ];    }}
