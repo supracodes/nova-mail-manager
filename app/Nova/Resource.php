@@ -56,4 +56,24 @@ abstract class Resource extends NovaResource
     {
         return parent::relatableQuery($request, $query);
     }
+
+    public static function hintsText(): string
+    {
+        return <<<PLAIN
+        
+        Name    : {{ \$name }}
+        Email   : {{ \$email }}
+        PHone   : {{ \$phone }}
+
+        Random  : {{ \$random(type, length, uppercase = true) }}
+                  ex: {{ \$random('string', 10) }}  -> AKIYQZJXZL
+                  ex: {{ \$random('int', 10) }}     -> 1234567890
+
+        Date    : {{ \$date(format) }}
+                  ex: {{ \$date('Y-m-d') }}         -> 2021-05-14
+
+        Uuid    : {{ \$uuid }}                      -> 5b1e1b9c-0b0a-4e6a-8b1a-0e8f5e3b6b1e
+        
+        PLAIN;
+    }
 }

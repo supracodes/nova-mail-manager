@@ -1,0 +1,1 @@
+<?phpnamespace Database\Seeders;use Illuminate\Database\Seeder;class CampaignSeeder extends Seeder{    public function run(): void    {        $contents = \App\Models\Campaign\Content::factory()            ->count(10)            ->create();    }}
